@@ -71,7 +71,30 @@ dokunmadan çıktı. Root kilit dosyasını normal kullanıcı da açamadı.
 
 ## Yeniden başlatma
 
-Çevrimdışı kurulum deneyi sürüyor; sonucu yayımlamadan önce buraya ekleyeceğim.
+Duraklatılan hazırlığı devam ettirdim. Uygulama sistemi yeniden başlattı ve
+çevrimdışı kurulum tamamlandı. VM, **Pardus 25.2 / 6.12.111+deb13-amd64** ile açıldı.
+Kurulum günlüğünde APT/dpkg hatası yok; `dpkg --audit` boş, bozuk bağımlılık **0**,
+başarısız systemd servisi **0**. `/system-update` kaldırılmış.
+
+Yükseltmeden sonra iki güncelleme kaldı: `firmware-b43-installer` ve
+`firmware-b43legacy-installer`. Bunlar mevcut yükseltme aracının `keep_list`
+listesinde; çevrimdışı betik de bu paketleri geçici olarak bekletiyor.
+İlk açılışta AppArmor hazırlığı birkaç dakika sürdü. Açılış günlüğündeki AF_VSOCK
+ve ALSA kuralı hata kayıtları da sağlık çıktısında yer alıyor.
+
+Yükseltme, arşivdeki resmî 0.7.0 paketini kurduğu için son yamalı `.deb` dosyasını
+yeniden kurup uygulamayı normal başlangıcıyla açtım. Kaynak dosyaların SHA-256
+değerleri `8bcde67` ile eşleşiyor; paket denetimi ve bağımlılıklar yine temiz.
+Bu yerel paket kurulduğunda güncelleme listesine resmî `pardus-update` de ekleniyor;
+son ekran görüntüsündeki üçüncü kayıt bu. Sürüm numarasını deney için değiştirmedim.
+
+- [Tam çevrimdışı kurulum günlüğü](reboot/cevrimdisi-kurulum.log)
+- [Yükseltme sonrası sağlık kontrolü](reboot/yukseltme-sonrasi-saglik.log)
+- [Son yamanın kurulumu ve dosya sağlamaları](reboot/son-yama-kurulum.log)
+- [Son yamanın sağlık kontrolü](reboot/son-yama-saglik.log),
+  [uygulama başlangıcı](reboot/son-yama-arayuz.log),
+  [gerçek masaüstü ekranı](reboot/06-yukseltme-sonrasi.png)
+- [Salt okunur sağlık kontrolü betiği](tools/update-postupgrade-check.py)
 
 Bu kayıt, forumdaki kullanıcının yaşadığı tüm sistem bozulmasının aynı sebepten
 çıktığını ileri sürmüyor. Ölçülen hata, etkin hazırlığa ikinci kontrolün girmesi

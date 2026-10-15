@@ -1,0 +1,22 @@
+window w:575 h:650 | monitor w:1280 h:800 s:1
+config_update_interval 86400
+config_update_lastupdate 1792087635 (2026-10-15 21:07:15)
+config_update_selectable False
+config_autostart True
+config_notifications True
+
+(tr.org.pardus.update:1969): libayatana-appindicator-WARNING **: 22:56:53.422: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
+package completed
+broken: False
+in apt_update
+not started timed update check
+lu:1792087635 inv:86400 now:1792094217
+user_keep_list: []
+to_upgrade ['firmware-b43-installer', 'firmware-b43legacy-installer', 'pardus-update']
+to_install []
+to_delete []
+to_keep []
+changes_available True
+cache_error False
+user_keep_list_depends []
+on_upgradables_worker_done

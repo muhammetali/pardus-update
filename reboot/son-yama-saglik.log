@@ -1,0 +1,45 @@
+2026-10-15T19:56:09.813113+00:00
+PRETTY_NAME="Pardus GNU/Linux 25 (yirmibes)"
+NAME="Pardus GNU/Linux"
+VERSION_ID="25.2"
+VERSION="25.2 (yirmibes)"
+VERSION_CODENAME=yirmibes
+DEBIAN_VERSION_FULL=13.7
+ID=pardus
+HOME_URL="https://www.pardus.org.tr/"
+SUPPORT_URL="https://forum.pardus.org.tr/"
+BUG_REPORT_URL="https://talep.pardus.org.tr/"
+ID_LIKE=debian
+PARDUS_CODENAME=yirmibes
+
+COMMAND ["uname", "-r"] EXIT 0
+6.12.111+deb13-amd64
+
+COMMAND ["dpkg", "--audit"] EXIT 0
+
+COMMAND ["dpkg-query", "-W", "pardus-update", "pardus-xfce-desktop", "python3-apt"] EXIT 0
+pardus-update	0.7.0
+pardus-xfce-desktop	2025.0.1
+python3-apt	3.0.0+par23
+
+COMMAND ["systemctl", "is-system-running"] EXIT 0
+running
+
+COMMAND ["systemctl", "--failed", "--no-pager", "--plain"] EXIT 0
+UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+COMMAND ["journalctl", "-b", "-p", "err", "--no-pager", "-n", "60"] EXIT 0
+Oct 15 22:49:38 pardus-update-lab systemd-ssh-generator[425]: Failed to query local AF_VSOCK CID: Cannot assign requested address
+Oct 15 22:49:38 pardus-update-lab (sd-exec-[415]: /usr/lib/systemd/system-generators/systemd-ssh-generator failed with exit status 1.
+Oct 15 22:49:38 pardus-update-lab systemd-udevd[511]: /usr/lib/udev/rules.d/90-alsa-restore.rules:18 GOTO="alsa_restore_std" has no matching label, ignoring.
+Oct 15 22:49:38 pardus-update-lab systemd-udevd[511]: /usr/lib/udev/rules.d/90-alsa-restore.rules:22 GOTO="alsa_restore_std" has no matching label, ignoring.
+
+broken_count: 0
+pending_changes: 3
+["firmware-b43-installer", "pardus-update", "firmware-b43legacy-installer"]
+system-update exists: False
+SHA256 src/MainWindow.py ca78e410f2c496f5e6079a2e0f9da81d7124d10ed38e9706ec8cf00f7ac83cd5
+SHA256 src/PackageOperation.py 8ca80de9038c69ce1896974b38b39cee3647371e506b9b5f4bc575fd2d180231
+SHA256 src/SysActions.py b1b233575dd29fc59a9a5fc4ced64fb46159b6d8efb33b6867097213fb84f5e1
