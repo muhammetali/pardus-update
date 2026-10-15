@@ -2286,6 +2286,11 @@ class MainWindow(object):
                 print("There is an error in the repository connections.")
                 self.set_upgradable_page_and_notify()
                 self.ui_conerror_info_label.set_text(self.sources_err_lines)
+        elif os.WIFEXITED(status) and os.WEXITSTATUS(status) == 11:
+            # Another helper owns the operation. Keep the cached view and the
+            # next scheduled check without recording a successful refresh.
+            self.set_upgradable_page_and_notify()
+            self.create_autoupdate_glibid()
         else:
             self.indicator.set_icon(self.icon_error)
 

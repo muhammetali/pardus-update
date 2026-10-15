@@ -71,6 +71,8 @@ class DistUpgradeTests(unittest.TestCase):
     def tearDown(self):
         if self.w.autoupdate_monitoring_glibid:
             GLib.source_remove(self.w.autoupdate_monitoring_glibid)
+        if self.w.autoupdate_glibid:
+            GLib.source_remove(self.w.autoupdate_glibid)
         drain()
         for obj in self.w.GtkBuilder.get_objects():
             if isinstance(obj, Gtk.Window):
@@ -167,6 +169,35 @@ class DistUpgradeTests(unittest.TestCase):
         self.thread.assert_not_called()
         self.w.startDistUpgradeProcess.assert_not_called()
         self.w.distupgrade_vte_start_process.assert_not_called()
+
+    def test_busy_refresh_keeps_cached_page_and_scheduled_checks(self):
+        self.w.Package.updatecache = Mock(return_value=True)
+        self.w.Package.upgradable = Mock(return_value=[])
+        self.w.indicator = Mock()
+        self.w.item_systemstatus = Gtk.MenuItem()
+        self.w.pargnome23 = False
+        self.w.isbroken = False
+        self.w.icon_normal = "normal"
+        self.w.UserSettings = SimpleNamespace(config_update_interval=3600,
+                                             config_update_lastupdate=123, writeConfig=Mock())
+        self.w.SystemSettings = SimpleNamespace(config_update_interval=None)
+        for interval in (3600, -1):
+            with self.subTest(interval=interval):
+                self.w.UserSettings.config_update_interval = interval
+                self.w.update_inprogress = True
+                self.w.ui_main_stack.set_visible_child_name("spinner")
+                self.w.onAptUpdateProcessExit(123, 11 << 8)
+                self.assertFalse(self.w.update_inprogress)
+                self.assertEqual(self.w.ui_main_stack.get_visible_child_name(), "ok")
+                self.w.UserSettings.writeConfig.assert_not_called()
+                self.assertEqual(self.w.UserSettings.config_update_lastupdate, 123)
+                if interval == -1:
+                    self.assertIsNone(self.w.autoupdate_glibid)
+                else:
+                    self.assertIsNotNone(self.w.autoupdate_glibid)
+                    self.assertIsNotNone(GLib.MainContext.default().find_source_by_id(self.w.autoupdate_glibid))
+                    GLib.source_remove(self.w.autoupdate_glibid)
+                    self.w.autoupdate_glibid = None
 
     def test_regular_updates_required_releases_control(self):
         self.w.Package.required_changes_upgrade.return_value = {
