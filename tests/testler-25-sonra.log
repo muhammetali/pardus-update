@@ -1,0 +1,39 @@
+test_exception_releases_lock (__main__.PackageOperationTests.test_exception_releases_lock) ... ok
+test_killed_process_leaves_no_stale_lock (__main__.PackageOperationTests.test_killed_process_leaves_no_stale_lock) ... ok
+test_lock_is_not_accessible_to_other_users (__main__.PackageOperationTests.test_lock_is_not_accessible_to_other_users) ... ok
+test_normal_exit_releases_lock (__main__.PackageOperationTests.test_normal_exit_releases_lock) ... ok
+test_second_process_is_rejected_before_entering (__main__.PackageOperationTests.test_second_process_is_rejected_before_entering) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.511s
+
+OK
+test_async_download_spawn_failure_releases_operation (__main__.DistUpgradeTests.test_async_download_spawn_failure_releases_operation) ... ok
+test_busy_refresh_keeps_cached_page_and_scheduled_checks (__main__.DistUpgradeTests.test_busy_refresh_keeps_cached_page_and_scheduled_checks) ... ok
+test_cancel_after_download_starts_fresh_control (__main__.DistUpgradeTests.test_cancel_after_download_starts_fresh_control) ... ok
+test_control_permission_denied_allows_retry (__main__.DistUpgradeTests.test_control_permission_denied_allows_retry) ... ok
+test_control_reserved_before_worker_and_double_click (__main__.DistUpgradeTests.test_control_reserved_before_worker_and_double_click) ... ok
+test_control_spawn_failure_allows_retry (__main__.DistUpgradeTests.test_control_spawn_failure_allows_retry) ... ok
+test_download_cannot_be_started_twice (__main__.DistUpgradeTests.test_download_cannot_be_started_twice) ... ok
+test_download_permission_denied_allows_retry (__main__.DistUpgradeTests.test_download_permission_denied_allows_retry) ... ok
+test_downloaded_packages_are_resumed (__main__.DistUpgradeTests.test_downloaded_packages_are_resumed) ... ok
+test_explicit_cache_cleanup_invalidates_downloaded_plan (__main__.DistUpgradeTests.test_explicit_cache_cleanup_invalidates_downloaded_plan) ... ok
+test_failed_download_keeps_retry_screen (__main__.DistUpgradeTests.test_failed_download_keeps_retry_screen) ... ok
+test_foreign_download_callback_does_not_finish_current_operation (__main__.DistUpgradeTests.test_foreign_download_callback_does_not_finish_current_operation) ... ok
+test_navigation_does_not_restart_control (__main__.DistUpgradeTests.test_navigation_does_not_restart_control) ... ok
+test_other_actions_cannot_replace_active_distupgrade (__main__.DistUpgradeTests.test_other_actions_cannot_replace_active_distupgrade) ... ok
+test_other_apt_operation_prevents_distupgrade (__main__.DistUpgradeTests.test_other_apt_operation_prevents_distupgrade) ... ok
+test_package_changes_invalidate_completed_plan_only (__main__.DistUpgradeTests.test_package_changes_invalidate_completed_plan_only) ... ok
+test_preflight_exception_allows_retry (__main__.DistUpgradeTests.test_preflight_exception_allows_retry) ... ok
+test_prepare_cannot_be_started_twice (__main__.DistUpgradeTests.test_prepare_cannot_be_started_twice) ... ok
+test_prepare_exit_allows_retry (__main__.DistUpgradeTests.test_prepare_exit_allows_retry) ... ok
+test_prepare_spawn_failure_releases_operation (__main__.DistUpgradeTests.test_prepare_spawn_failure_releases_operation) ... ok
+test_preparing_reboot_survives_settings_home (__main__.DistUpgradeTests.test_preparing_reboot_survives_settings_home) ... ok
+test_regular_updates_required_releases_control (__main__.DistUpgradeTests.test_regular_updates_required_releases_control) ... ok
+test_tray_and_command_line_return_to_distupgrade (__main__.DistUpgradeTests.test_tray_and_command_line_return_to_distupgrade) ... ok
+test_worker_start_failure_allows_retry (__main__.DistUpgradeTests.test_worker_start_failure_allows_retry) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 3.992s
+
+OK

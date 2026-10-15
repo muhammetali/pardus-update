@@ -1,0 +1,23 @@
+[
+  {
+    "helper": "SysActions.py",
+    "exit": 11,
+    "stdout": "",
+    "stderr": "Package manager is busy, try again after the process is completed.\n",
+    "archives_unchanged": true
+  },
+  {
+    "helper": "AutoAptUpdate.py",
+    "exit": 11,
+    "stdout": "",
+    "stderr": "Package manager is busy, try again after the process is completed.\n",
+    "archives_unchanged": true
+  },
+  {
+    "helper": "AptSourceActions.py",
+    "exit": 11,
+    "stdout": "",
+    "stderr": "Package manager is busy, try again after the process is completed.\n",
+    "archives_unchanged": true
+  }
+]

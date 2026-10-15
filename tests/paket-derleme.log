@@ -1,0 +1,153 @@
+dpkg-buildpackage: info: source package pardus-update
+dpkg-buildpackage: info: source version 0.7.0
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Fatih Altun <fatih.altun@pardus.org.tr>
+dpkg-buildpackage: info: host architecture amd64
+ dpkg-source --before-build .
+ debian/rules clean
+dh clean --with python3 --buildsystem=pybuild
+   dh_auto_clean -O--buildsystem=pybuild
+I: pybuild base:311: python3.13 setup.py clean 
+running clean
+removing '/home/pardus/lab-20261015/update-source/.pybuild/cpython3_3.13/build' (and everything under it)
+'build/bdist.linux-x86_64' does not exist -- can't clean it
+'build/scripts-3.13' does not exist -- can't clean it
+   dh_autoreconf_clean -O--buildsystem=pybuild
+   dh_clean -O--buildsystem=pybuild
+ debian/rules binary
+dh binary --with python3 --buildsystem=pybuild
+   dh_update_autotools_config -O--buildsystem=pybuild
+   dh_autoreconf -O--buildsystem=pybuild
+   dh_auto_configure -O--buildsystem=pybuild
+I: pybuild base:311: python3.13 setup.py config 
+running config
+   dh_auto_build -O--buildsystem=pybuild
+I: pybuild base:311: /usr/bin/python3 setup.py build 
+running build
+running build_scripts
+creating build/scripts-3.13
+copying and adjusting pardus-update -> build/scripts-3.13
+changing mode of build/scripts-3.13/pardus-update from 644 to 755
+   dh_auto_test -O--buildsystem=pybuild
+I: pybuild base:311: cd /home/pardus/lab-20261015/update-source/.pybuild/cpython3_3.13/build; python3.13 -m unittest discover -v 
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+NO TESTS RAN
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=pybuild
+   dh_prep -O--buildsystem=pybuild
+   dh_auto_install --destdir=debian/pardus-update/ -O--buildsystem=pybuild
+I: pybuild base:311: /usr/bin/python3 setup.py install --root /home/pardus/lab-20261015/update-source/debian/pardus-update 
+running install
+/usr/lib/python3/dist-packages/setuptools/_distutils/cmd.py:90: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+running build
+running build_scripts
+running install_data
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/bin
+copying pardus-update -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/bin
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/applications
+copying data/tr.org.pardus.update.desktop -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/applications
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/ui
+copying ui/MainWindow.glade -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/ui
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/AptSourceActions.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/AutoAptUpdate.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/Group.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/Main.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/MainWindow.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/Package.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/PackageOperation.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/RepoDistControl.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/SysActions.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/SystemSettings.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/SystemSettingsWrite.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/UserSettings.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/Utils.py -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+copying src/__version__ -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/src
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/tr.org.pardus.update-autostart.desktop -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-available-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-error-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-inprogress-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-uptodate.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-update-cantconnect.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-safeupgrade-template.sh -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/pardus-safeupgrade.service -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/style.css -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+copying data/sources.json -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/pardus/pardus-update/data
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/polkit-1/actions
+copying data/tr.org.pardus.pkexec.pardus-update.policy -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/polkit-1/actions
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/etc/skel/.config/autostart
+copying data/tr.org.pardus.update-autostart.desktop -> /home/pardus/lab-20261015/update-source/debian/pardus-update/etc/skel/.config/autostart
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-available-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-error-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-inprogress-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-symbolic.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-uptodate.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+copying data/pardus-update-cantconnect.svg -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/icons/hicolor/scalable/apps
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/polkit-1/rules.d
+copying data/pardus-update-group.rules -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/polkit-1/rules.d
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/locale/tr/LC_MESSAGES
+copying po/tr/LC_MESSAGES/pardus-update.mo -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/locale/tr/LC_MESSAGES
+creating /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/locale/pt/LC_MESSAGES
+copying po/pt/LC_MESSAGES/pardus-update.mo -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/share/locale/pt/LC_MESSAGES
+running install_egg_info
+running egg_info
+creating pardus_update.egg-info
+writing pardus_update.egg-info/PKG-INFO
+writing dependency_links to pardus_update.egg-info/dependency_links.txt
+writing requirements to pardus_update.egg-info/requires.txt
+writing top-level names to pardus_update.egg-info/top_level.txt
+writing manifest file 'pardus_update.egg-info/SOURCES.txt'
+reading manifest file 'pardus_update.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'pardus_update.egg-info/SOURCES.txt'
+Copying pardus_update.egg-info to /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/lib/python3.13/dist-packages/pardus_update-0.7.0.egg-info
+Skipping SOURCES.txt
+running install_scripts
+copying build/scripts-3.13/pardus-update -> /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/bin
+changing mode of /home/pardus/lab-20261015/update-source/debian/pardus-update/usr/bin/pardus-update to 755
+   dh_installdocs -O--buildsystem=pybuild
+   dh_installchangelogs -O--buildsystem=pybuild
+   dh_python3 -O--buildsystem=pybuild
+I: dh_python3 tools:114: replacing shebang in debian/pardus-update/usr/bin/pardus-update
+   dh_installsystemduser -O--buildsystem=pybuild
+   dh_icons -O--buildsystem=pybuild
+   dh_perl -O--buildsystem=pybuild
+   dh_link -O--buildsystem=pybuild
+   dh_strip_nondeterminism -O--buildsystem=pybuild
+	Normalized debian/pardus-update/usr/share/locale/tr/LC_MESSAGES/pardus-update.mo
+	Normalized debian/pardus-update/usr/share/locale/pt/LC_MESSAGES/pardus-update.mo
+   dh_compress -O--buildsystem=pybuild
+   dh_fixperms -O--buildsystem=pybuild
+   dh_missing -O--buildsystem=pybuild
+   dh_installdeb -O--buildsystem=pybuild
+   dh_gencontrol -O--buildsystem=pybuild
+   dh_md5sums -O--buildsystem=pybuild
+   dh_builddeb -O--buildsystem=pybuild
+dpkg-deb: building package 'pardus-update' in '../pardus-update_0.7.0_all.deb'.
+ dpkg-genbuildinfo --build=binary -O../pardus-update_0.7.0_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../pardus-update_0.7.0_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+-rw-r--r-- root/root       886 2026-07-21 18:26 ./usr/share/pardus/pardus-update/src/PackageOperation.py

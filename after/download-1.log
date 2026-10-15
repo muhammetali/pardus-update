@@ -1,0 +1,16 @@
+4 tix amd64 8.4.3-14 [280 kB]
+Get:1889 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 tk amd64 8.6.16 [4136 B]
+Get:1890 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 tk8.6 amd64 8.6.16-1 [69.6 kB]
+Get:1891 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 tree amd64 2.2.1-1 [59.4 kB]
+Get:1892 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 usb-modeswitch-data all 20191128-7 [37.3 kB]
+Get:1893 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 usb-modeswitch amd64 2.6.1-4+b2 [51.0 kB]
+Get:1894 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 va-driver-all amd64 2.22.0-3 [14.9 kB]
+Get:1895 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 vdpau-driver-all amd64 1.5-3+b1 [4704 B]
+Get:1896 https://depopardus.itu.edu.tr/guvenlik yirmibes-deb/main amd64 vlc-l10n all 3.0.24-0+deb13u1 [6401 kB]
+Get:1897 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 wireless-regdb all 2026.05.30-1~deb13u1 [12.4 kB]
+Get:1898 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 xdg-user-dirs amd64 0.18-2 [53.2 kB]
+Get:1899 https://depopardus.itu.edu.tr/guvenlik yirmibes-deb/main amd64 xvfb amd64 2:21.1.16-1.3+deb13u4 [3199 kB]
+Get:1900 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 zip amd64 3.0-15+deb13u1 [235 kB]
+Get:1901 https://depopardus.itu.edu.tr/pardus yirmibes-deb/main amd64 zstd amd64 1.5.7+dfsg-1 [756 kB]
+Fetched 1758 MB in 6s (12.0 MB/s)                                  
+

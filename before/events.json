@@ -1,0 +1,79 @@
+[
+  {
+    "event": "startup_complete",
+    "time": 1792089836.684789,
+    "distro": 23,
+    "target": "Pardus 25"
+  },
+  {
+    "event": "official_mirror_selected",
+    "time": 1792089836.6868618,
+    "mirror": "https://depopardus.itu.edu.tr",
+    "sources": "deb https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n"
+  },
+  {
+    "event": "control_started",
+    "time": 1792089839.3504362,
+    "pid": 1347,
+    "command": [
+      "/usr/bin/pkexec",
+      "/usr/share/pardus/pardus-update/src/SysActions.py",
+      "controldistupgrade",
+      "deb https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n"
+    ]
+  },
+  {
+    "event": "plan_ready",
+    "time": 1792089895.748471
+  },
+  {
+    "event": "download_exit",
+    "time": 1792090089.2620108,
+    "status": 0
+  },
+  {
+    "event": "download_complete",
+    "time": 1792090089.3002167,
+    "count": 1900,
+    "bytes": 1758395136
+  },
+  {
+    "event": "prepare_started",
+    "time": 1792090089.9894497,
+    "pid": 2080,
+    "command": [
+      "/usr/bin/pkexec",
+      "/usr/share/pardus/pardus-update/src/SysActions.py",
+      "distupgradeoffline",
+      "deb https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n",
+      "new"
+    ]
+  },
+  {
+    "event": "prepare_paused",
+    "time": 1792090090.424074,
+    "pid": 2080,
+    "cmdline": "python3 /usr/share/pardus/pardus-update/src/SysActions.py distupgradeoffline deb https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n new "
+  },
+  {
+    "event": "control_started",
+    "time": 1792090093.7776067,
+    "pid": 2346,
+    "command": [
+      "/usr/bin/pkexec",
+      "/usr/share/pardus/pardus-update/src/SysActions.py",
+      "controldistupgrade",
+      "deb https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/pardus yirmibes-deb main contrib non-free non-free-firmware\n\ndeb https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n#deb-src https://depopardus.itu.edu.tr/guvenlik yirmibes-deb main contrib non-free non-free-firmware\n"
+    ]
+  },
+  {
+    "event": "after_navigation",
+    "time": 1792090099.0791376,
+    "control_requests": 2,
+    "page": "control",
+    "main_page": "distupgrade",
+    "busy": false,
+    "count": 0,
+    "bytes": 0
+  }
+]

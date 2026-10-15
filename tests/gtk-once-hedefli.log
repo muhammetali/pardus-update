@@ -1,0 +1,55 @@
+test_control_reserved_before_worker_and_double_click (__main__.DistUpgradeTests.test_control_reserved_before_worker_and_double_click) ... FAIL
+test_navigation_does_not_restart_control (__main__.DistUpgradeTests.test_navigation_does_not_restart_control) ... FAIL
+test_preparing_reboot_survives_settings_home (__main__.DistUpgradeTests.test_preparing_reboot_survives_settings_home) ... FAIL
+test_downloaded_packages_are_resumed (__main__.DistUpgradeTests.test_downloaded_packages_are_resumed) ... FAIL
+test_download_permission_denied_allows_retry (__main__.DistUpgradeTests.test_download_permission_denied_allows_retry) ... ok
+test_regular_updates_required_releases_control (__main__.DistUpgradeTests.test_regular_updates_required_releases_control) ... ok
+
+======================================================================
+FAIL: test_control_reserved_before_worker_and_double_click (__main__.DistUpgradeTests.test_control_reserved_before_worker_and_double_click)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pardus/lab-20261015/update-baseline/tests/distupgrade.py", line 105, in test_control_reserved_before_worker_and_double_click
+    self.assertTrue(self.w.upgrade_inprogress)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_navigation_does_not_restart_control (__main__.DistUpgradeTests.test_navigation_does_not_restart_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pardus/lab-20261015/update-baseline/tests/distupgrade.py", line 113, in test_navigation_does_not_restart_control
+    self.assertEqual(self.thread.call_count, 1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 1
+
+======================================================================
+FAIL: test_preparing_reboot_survives_settings_home (__main__.DistUpgradeTests.test_preparing_reboot_survives_settings_home)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pardus/lab-20261015/update-baseline/tests/distupgrade.py", line 120, in test_preparing_reboot_survives_settings_home
+    self.thread.assert_not_called()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 940, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'Thread' to not have been called. Called 1 times.
+Calls: [call(target=<bound method MainWindow.before_distupgradables_worker_thread of <MainWindow.MainWindow object at 0x7f2fb01ae990>>, daemon=True),
+ call().start()].
+
+======================================================================
+FAIL: test_downloaded_packages_are_resumed (__main__.DistUpgradeTests.test_downloaded_packages_are_resumed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/pardus/lab-20261015/update-baseline/tests/distupgrade.py", line 128, in test_downloaded_packages_are_resumed
+    self.thread.assert_not_called()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/unittest/mock.py", line 940, in assert_not_called
+    raise AssertionError(msg)
+AssertionError: Expected 'Thread' to not have been called. Called 1 times.
+Calls: [call(target=<bound method MainWindow.before_distupgradables_worker_thread of <MainWindow.MainWindow object at 0x7f2fb01aead0>>, daemon=True),
+ call().start()].
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.243s
+
+FAILED (failures=4)
